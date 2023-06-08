@@ -1,0 +1,58 @@
+:root {
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-primary: #F3DE2C;
+
+  /* --bg-color: #1e1e20; */
+  --bg-color: #e7eef7;
+  /* --font-color-primary: #dfdfd8; */
+  --font-color-primary: #202a40;
+
+  --border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--font-color-primary);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1250px;
+  padding: calc(var(--spacing-xl) * 2) var(--spacing-m);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

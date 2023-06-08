@@ -1,0 +1,38 @@
+.table_wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  background: 
+    linear-gradient(90deg, var(--color-background) 20%, rgba(255, 255, 255, 0)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-background) 80%) 
+                    100% 0,
+    radial-gradient(farthest-side at 0 0%, var(--color-shadow), rgba(0, 0, 0, 0)),
+    radial-gradient(farthest-side at 100% 0%, var(--color-shadow), rgba(0, 0, 0, 0))
+                    100% 0;
+  background-repeat: no-repeat;
+  background-size: 20% 200%, 20% 200%, 8% 400%, 8% 400%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table_header {
+  border-radius: var(--border-radius);
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.table_row {
+  padding: var(--spacing-m) 0;
+  border-bottom: var(--font-color-primary) 1px solid;
+}
+
+.cell {
+  padding: var(--spacing-s) var(--spacing-m);
+  text-align: left;
+}

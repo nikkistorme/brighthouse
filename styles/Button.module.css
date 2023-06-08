@@ -1,0 +1,15 @@
+.hyah-button {
+  min-height: 44px;
+  min-width: 44px;
+  width: fit-content;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease-in-out;
+}
+.hyah-button:disabled {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
