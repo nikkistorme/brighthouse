@@ -3,7 +3,6 @@ import { Key, useState } from 'react';
 import { Result } from 'lighthouse';
 import ReportTable from './ReportTable';
 
-import styles from '@/styles/page.module.css';
 import ParamsForm from './ParamsForm';
 
 const apiOptions = {
@@ -202,19 +201,6 @@ export default function Home() {
       <div>
         <h1>Brighthouse</h1>
         <p>Automatically run batches of Google Lighthouse audits and compile the results.</p>
-        <h2>TODO</h2>
-        <ul>
-          <li>Accessible multiselect</li>
-          <li>Accessible table</li>
-          <li>Accessible form</li>
-          <li>Accessible progress bar</li>
-          <li>Style background and typography</li>
-          <li>Style table</li>
-          <li>Style form</li>
-          <li>Style progress bar</li>
-          <li>Catch incorrect URLs</li>
-          <li>Add audit types</li>
-        </ul>
       </div>
       <div>
         <h2>Parameters</h2>
