@@ -12,9 +12,11 @@ const runLighthouse = async (url: string, chrome: Chrome, device: string, catego
     switch (device) {
       case "desktop":
         // runnerResult = await lighthouse(url, flags, desktopConfig);
+        // @ts-ignore
         runnerResult = await lighthouse(url, flags);
         break;
       default:
+        // @ts-ignore
         runnerResult = await lighthouse(url, flags);
         break;
     }

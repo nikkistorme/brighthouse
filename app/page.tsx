@@ -151,13 +151,15 @@ export default function Home() {
     const newReportsD: BrighthouseReport[] = []
 
     for (const result of results.mobile) {
+      if (!result) continue;
       let processedResult: BrighthouseReport = {
         url: result.requestedUrl || "",
         device: "mobile",
       };
       params.categories.forEach((category: Category) => {
-        if (result?.categories[category]?.score)
-          processedResult[category] = result.categories[category].score * 100;
+        if (result!.categories[category]!.score)
+          // @ts-ignore: Unreachable code error
+          processedResult[category] = result!.categories[category]!.score * 100;
         else processedResult[category] = 0;
       });
       newReportsM.push(processedResult);
@@ -170,6 +172,7 @@ export default function Home() {
       };
       params.categories.forEach((category: Category) => {
         if (result?.categories[category]?.score)
+          // @ts-ignore: Unreachable code error
           processedResult[category] = result.categories[category].score * 100;
         else processedResult[category] = 0;
       });

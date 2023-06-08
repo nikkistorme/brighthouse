@@ -7,13 +7,13 @@ type AllResults = {
   mobile: any[];
 }
 
-const createCsv = (fields, data, name) => {
-  const csv = papa.unparse({
-    fields: fields,
-    data: data,
-  });
-  fs.writeFileSync(`${name}.csv`, csv, "utf8");
-};
+// const createCsv = (fields, data, name) => {
+//   const csv = papa.unparse({
+//     fields: fields,
+//     data: data,
+//   });
+//   fs.writeFileSync(`${name}.csv`, csv, "utf8");
+// };
 
 const avgCategoryScore = (results: any, category: string) => {
   const scores = results.map((r: any) => r.categories[category].score);
@@ -56,26 +56,27 @@ const processReports = async (params: BrighthouseParams, results: AllResults) =>
     }
 
     params.categories.forEach((category) => {
-      const title = categoryInfo[category].title;
-      if (!csvFields.includes(title)) csvFields.push(title);
-      if (mobileResults.length > 0)
-        mobileDataRow.push(avgCategoryScore(mobileResults, category));
-      if (desktopResults.length > 0)
-        desktopDataRow.push(avgCategoryScore(desktopResults, category));
+      // const title = categoryInfo[category].title;
+      // if (!csvFields.includes(title)) csvFields.push(title);
+      // if (mobileResults.length > 0)
+      //   mobileDataRow.push(avgCategoryScore(mobileResults, category));
+      // if (desktopResults.length > 0)
+      //   desktopDataRow.push(avgCategoryScore(desktopResults, category));
     });
+    // @ts-ignore: Unreachable code error
     params.audits.forEach((audit) => {
-      const title = `${auditInfo[audit].title} (${auditInfo[audit].unit})`;
-      if (!csvFields.includes(title)) csvFields.push(title);
-      if (mobileResults.length > 0)
-        mobileDataRow.push(avgAuditScore(mobileResults, audit));
-      if (desktopResults.length > 0)
-        desktopDataRow.push(avgAuditScore(desktopResults, audit));
+      // const title = `${auditInfo[audit].title} (${auditInfo[audit].unit})`;
+      // if (!csvFields.includes(title)) csvFields.push(title);
+      // if (mobileResults.length > 0)
+        // mobileDataRow.push(avgAuditScore(mobileResults, audit));
+      // if (desktopResults.length > 0)
+        // desktopDataRow.push(avgAuditScore(desktopResults, audit));
       // if (audit === "modern-image-formats")
     });
     dataArr.push(mobileDataRow);
     dataArr.push(desktopDataRow);
   })
-  createCsv(csvFields, dataArr, "report");
+  // createCsv(csvFields, dataArr, "report");
   // fs.writeFileSync("results.json", JSON.stringify(results, null, 2));
   console.log(`🤖 Finished report`);
 };
